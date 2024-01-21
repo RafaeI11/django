@@ -1,0 +1,92 @@
+/* compra.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #0066cc;
+}
+
+div {
+    width: 50%;
+    margin: 0 auto;
+    /* Centrar el div horizontalmente */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+    margin: 10px auto;
+    font-weight: bold;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    width: 80%;
+    padding: 15px;
+    border: 1px solid #0066cc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004080;
+}
+
+.lin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos en el centro si tienen alturas diferentes */
+}
+
+.lint-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lint-items li {
+    margin-right: 10px; /* Agrega espacio entre los elementos si es necesario */
+}
+
+a {
+    background-color: #0066cc;
+    border-radius: 10px;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Agrega una transición suave al cambio de color */
+}
+
+a:hover {
+    background-color: #004080;
+}

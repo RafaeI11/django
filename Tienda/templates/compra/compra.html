@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Producto</title>
+    <link rel="stylesheet" href="{% static 'Tienda/css/compra.css' %}">
+
+</head>
+
+<body>
+
+
+    <h1>Compra de Producto</h1>
+    <div>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+
+        <form method="post" action="{% url 'compra' %}">
+            {% csrf_token %}
+
+            <label for="id_nombre">Nombre:</label>
+            <input type="text" name="nombre" id="id_nombre" required>
+
+            <label for="id_email">Correo Electrónico:</label>
+            <input type="email" name="email" id="id_email" required>
+
+            <label for="id_direccion">Dirección de Envío:</label>
+            <input type="text" name="direccion" id="id_direccion" required>
+
+            <label for="id_telefono">Teléfono:</label>
+            <input type="tel" name="telefono" id="id_telefono" required>
+
+            <label for="id_cantidad">Cantidad a comprar:</label>
+            <input type="number" name="cantidad" id="id_cantidad" min="1" required>
+
+            <br>
+            <div class="lin">
+                <ul class="lint-items">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                <button type="submit">Comprar</button>
+                {% else %}
+                <p>Inicia sesión para comprar</p>
+                <a href="{% url 'login' %}">Iniciar sesión</a>
+                {% endif %}
+            </div>
+
+
+        </form>
+    </div>
+
+</body>
+
+</html>

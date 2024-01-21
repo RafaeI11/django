@@ -1,0 +1,29 @@
+{% extends 'Tienda/base.html' %}
+{% block title %} Pagina Principal | Mi sitio web {% endblock %}
+
+{% block content %}
+<!-- Mostrar lista de Productos -->
+<h1>Productos Disponibles</h1>
+<section class="productos">
+    {% for producto in productos %}
+    <article>
+        <h3>{{ producto.nombre }}</h3>
+        <p>
+            {{ producto.descripcion }}
+        </p>
+
+        {% if producto.imagen %}
+        <img src="{{ producto.imagen.url }}" alt="">
+        {% else %}
+        <p>No hay imagen disponible</p>
+        {% endif %}
+
+        <div class="precio">
+            <button><a style="text-decoration: none;color: #000;" href="{% url 'compra' %}">Comprar</a></button>
+            <h3>$ {{ producto.precio }}</h3>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+{% endblock %}

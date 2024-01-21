@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); */
+    margin: 0;
+    font-family: 'Skranji', cursive;
+    font-family: 'Skranji', cursive;
+}
+
+header {
+    height: 5vh;
+}
+
+.nav {
+    background-color: #000000;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    transition: all 0.5s ease;
+}
+
+/* Estilos para el menu de JS */
+.nav.active {
+    background-color: #ffffff93;
+    padding: 15px;
+}
+
+/* Estilos para el menu de JS */
+.nav.active .logo,
+.nav.active a {
+    color: #000;
+}
+
+/* Estilo para el menu de JS */
+.nav.active a:hover {
+    background-color: rgb(0, 0, 0);
+    color: #fffdfd;
+}
+
+.logo {
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+}
+
+.logo a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s ease;
+
+}
+
+.logo a:hover {
+    padding: 5px 10px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    list-style: none;
+    margin: 10px;
+}
+
+.menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.menu li a:hover {
+    padding: 5px 10px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+.menu:checked {
+    display: inline;
+}
+
+.menu2 li a:hover {
+    padding: 15px 10px 2px 10px;
+    background: #7f7f7f;
+    border-radius: 15px;
+}
+
+.scrol {
+    height: 100px;
+}
+
+
+/*Formularios*/
+.contenedor {
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 100px;
+    width: 50%;
+    text-align: center;
+}
+
+form label {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+label {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 15;
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] 
+{
+    margin-left: 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    width: 93%;
+    padding: 7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    resize: none;
+}
+
+button {
+    color: white;
+    margin-left: 73%;
+    background-color: #000000;
+    font-weight: bold;
+    font-family: 'Skranji', cursive;
+    margin-top: 20px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: left;
+}
+
+
+button[type="submit"]:active {
+    text-align: left;
+    background-color: rgb(26, 26, 26);
+    transform: scale(0.9);
+}
+
+form li {
+    list-style: none;
+}
+
+/* Estlos para diferentes pantallas*/
+.menu-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.menu-icon,
+#check {
+    display: none;
+    padding: 0px;
+    cursor: pointer;
+}
+
+/* 768 */
+@media (max-width:767px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .nav-menu ul {
+        display: block;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #adadad;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+    }
+
+    .nav-menu ul li {
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+
+    }
+
+    .nav-munu ul li:last-child {
+        background: none;
+        padding: 1rem;
+    }
+
+    #check:checked~ul {
+        left: 0;
+        transition: all .25s;
+
+    }
+
+}
+
+@media (max-width: 700px) {
+    .contenedor {
+        width: 100%;
+    }
+
+    button {
+        width: 50;
+        margin-left: 0%;
+
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+}

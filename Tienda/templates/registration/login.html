@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Ropa en Linea</title>
+
+    <link rel="stylesheet" href="{% static 'Tienda/css/for-login.css' %}">
+
+</head>
+
+<body>
+    <!-- Cabecera y navegación -->
+    <header>
+        <nav class="nav">
+
+            <div class="logo">
+                <a href="{% url 'home' %}">Fashion Style </a>
+            </div>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="menu-icon">
+                        <img src="{% static 'Tienda/img/menu.png' %}" alt="error">
+                    </i>
+                </label>
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="">Contactos</a></li>
+                    <li><a href="{% url 'registro' %}">Registrarse</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- script para la barra de navegacion -->
+    <!-- <div class="scrol">
+    </div> -->
+
+    <script src="{% static 'Tienda/js/menu.js' %}"></script>
+
+    <!-- Formulario -->
+    <div class="contenedor">
+
+        <form class="form1" method="post" action="">
+            <fieldset>
+                <legend>
+                    <h2>Bienvenido al apartado de Login</h2>
+                </legend>
+
+                {% csrf_token %}
+                {{ form }}
+                <br>
+                <button type="submit">Iniciar Seción</button>
+            </fieldset>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

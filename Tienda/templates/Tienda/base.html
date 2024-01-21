@@ -1,0 +1,97 @@
+<!-- Nombre del Gestor de Base de datos -->
+<!-- pgAdmin -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} | Ropa en Linea {% endblock %} </title>
+    <link rel="stylesheet" href="{% static 'Tienda/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'Tienda/css/productos.css' %}">
+    {% block extra_styles %}{% endblock %}
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+
+            <div class="logo">
+                <a href="{% url 'home' %}">Fashion Style</a>
+            </div>
+
+            <div class="nav-menu">
+
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="menu-icon">
+                        <img src="{% static 'Tienda/img/menu.png' %}" alt="error">
+                    </i>
+                </label>
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'hombre' %}">Hombres</a></li>
+                    <li><a href="{% url 'mujer' %}">Mujer</a></li>
+                    <li><a href="{% url 'contacto' %}">Contactos</a></li>
+
+                    {% if user.is_authenticated %}
+
+                    <li>
+                        <a href="{% url 'logout' %}">Cerrar sesión</a>
+                    </li>
+                    <li>
+                        <a href="#">@{{ user.username }}</a>
+                    </li>
+                    {% else %}
+
+                    <li>
+                        <a href="{% url 'login' %}">Iniciar sesión</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'registro' %}">Registrarse</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- LLamada de la función para darle movimiento la etiqueta del nav -->
+    <script src="{% static 'Tienda/js/menu.js' %}"></script>
+
+    {% block content %} {% endblock %}
+
+    <!-- Scrip que muestra una ventana cuando se registran -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {% if messages %}
+    {% for m in messages %}
+
+    <script>
+        Swal.fire({
+            "title": "Felisitaciones",
+            "text": "{{m}}",
+            "icon": "success"
+        })
+    </script>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Pie de Pagina -->
+    <footer class="pie">
+        <div class="footer-container">
+            <p>Creador: Ponce Macias Rafael</p>
+            <p class="copyright"> &copy; Fashion Style 2023</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

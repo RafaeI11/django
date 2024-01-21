@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos</title>
+    <link rel="stylesheet" href="{% static 'Tienda/css/ropa.css' %}">
+</head>
+
+<header>
+    <nav class="nav">
+
+        <div class="logo">
+            <a href="{% url 'home' %}">Fashion Style</a>
+        </div>
+
+        <div class="nav-menu">
+
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="menu-icon">
+                    <img src="{% static 'Tienda/img/menu.png' %}" alt="error">
+                </i>
+            </label>
+            <ul class="menu">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'hombre' %}">Hombres</a></li>
+                <li><a href="{% url 'mujer' %}">Mujer</a></li>
+                <li><a href="{% url 'contacto' %}">Contactos</a></li>
+
+                {% if user.is_authenticated %}
+
+                <li>
+                    <a href="{% url 'logout' %}">Cerrar sesión</a>
+                </li>
+                <li>
+                    <a href="#">@{{ user.username }}</a>
+                </li>
+                {% else %}
+
+                <li>
+                    <a href="{% url 'login' %}">Iniciar sesión</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'registro' %}">Registrarse</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+
+    </nav>
+</header>
+
+<body>
+    <h1 style="margin-top: 150px; margin-left: 20px; margin-bottom: 12px;">Contactos</h1>
+
+    <p style="margin-left: 20px;">¡Gracias por visitarnos! Si tienes alguna pregunta o comentario, no dudes en ponerte
+        en contacto con nosotros.
+        Estamos aquí para ayudarte.</p>
+
+    <address style="margin: 20px;">
+        <h2>Detalles de contacto:</h2>
+        <p>Correo electrónico: info@tutienda.com</p>
+        <p>Teléfono: (123) 456-7890</p>
+        <p>Dirección: Avenida Manabí, Portoviejo, Ecuador</p>
+    </address>
+
+    <p style="margin-left: 20px; font-size: 20px;">¡Esperamos saber de ti pronto!</p>
+
+    <!-- Agrega más contenido según sea necesario -->
+
+</body>
+
+</html>
