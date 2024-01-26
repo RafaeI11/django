@@ -10,9 +10,9 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
+/* body {
 	font-family: 'Skranji', cursive;
-}
+} */
 
 header {
 	width: 100%;
@@ -26,6 +26,7 @@ header {
 }
 
 .nav {
+	font-family: 'Skranji';
 	background-color: #ffffff93;
 	position: fixed;
 	width: 100%;

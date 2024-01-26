@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	font-family: 'Skranji', cursive;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -26,6 +26,7 @@ header {
 }
 
 .nav {
+	font-family: 'Skranji';
 	flex-wrap: wrap;
 	background-color: #ffffff93;
 	position: fixed;

@@ -1,7 +1,7 @@
 /* compra.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f8f8f8;
     color: #333;
     margin: 0;
@@ -10,7 +10,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #0066cc;
+    color: #000000;
 }
 
 div {
@@ -37,35 +37,25 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="number"] {
-    margin: 10px auto;
+    margin: 7px auto;
     font-weight: bold;
     background: #ffffff;
     color: rgb(0, 0, 0);
     font-size: 14px;
     width: 80%;
-    padding: 15px;
-    border: 1px solid #0066cc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #0066cc;
-    color: #fff;
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #004080;
+    border-bottom: 1px solid #000000; /* Borde solo en la parte inferior */
+    border-radius: 0; /* Asegura que no haya bordes redondeados */
+    box-sizing: border-box;
+    display: inline-block; /* Mostrar como una línea */
 }
 
 .lin {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinea verticalmente los elementos en el centro si tienen alturas diferentes */
+    align-items: center;
+    /* Alinea verticalmente los elementos en el centro si tienen alturas diferentes */
 }
 
 .lint-items {
@@ -75,18 +65,33 @@ button:hover {
 }
 
 .lint-items li {
-    margin-right: 10px; /* Agrega espacio entre los elementos si es necesario */
+    margin-right: 10px;
+    /* Agrega espacio entre los elementos si es necesario */
+}
+
+button {
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #555;
 }
 
 a {
-    background-color: #0066cc;
+    background-color: #333;
     border-radius: 10px;
     padding: 10px;
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s ease; /* Agrega una transición suave al cambio de color */
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    background-color: #004080;
+    background-color: #555;
 }

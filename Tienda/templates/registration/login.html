@@ -7,17 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Ropa en Linea</title>
 
-    <link rel="stylesheet" href="{% static 'Tienda/css/for-login.css' %}">
+    <link rel="stylesheet" href="{% static 'Tienda/css/register/register.css' %}">
+    <link rel="stylesheet" href="{% static 'Tienda/css/ropa.css' %}">
 
 </head>
 
 <body>
     <!-- Cabecera y navegación -->
-    <header>
+    <header style="margin-bottom: 120px;">
         <nav class="nav">
 
             <div class="logo">
-                <a href="{% url 'home' %}">Fashion Style </a>
+                <a class="fashion-style" href="{% url 'home' %}">Fashion Style </a>
             </div>
 
             <div class="nav-menu">
@@ -30,7 +31,7 @@
                 </label>
                 <ul class="menu">
                     <li><a href="{% url 'home' %}">Inicio</a></li>
-                    <li><a href="">Contactos</a></li>
+                    <li><a href="{% url 'contacto' %}">Contactos</a></li>
                     <li><a href="{% url 'registro' %}">Registrarse</a></li>
                 </ul>
             </div>
